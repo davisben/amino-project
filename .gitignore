@@ -13,11 +13,6 @@
 # Ignore Drupal's file directory
 /web/sites/*/files/
 
-# Ignore environment specific files
-/web/.htaccess
-/web/robots.txt
-/web/sites/development.services.yml
-
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
 

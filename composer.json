@@ -32,54 +32,23 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "discard-changes": true,
-        "optimize-autoloader": true,
         "sort-packages": true
-    },
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
-    "scripts": {
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
     },
     "extra": {
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
-            },
-            "initial": {
-                ".htaccess": ".htaccess",
-                "robots.txt": "robots.txt",
-                "sites/development.services.yml": "sites/development.services.yml",
-                "sites/default/default.services.yml": "sites/default/services.yml",
-                "sites/default/default.settings.php": "sites/default/settings.php"
-            },
-            "excludes": [
-                ".htaccess",
-                "robots.txt",
-                "sites/development.services.yml"
-            ]
+            }
         },
         "installer-paths": {
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": ["type:drupal-library"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
         },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
