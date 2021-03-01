@@ -35,6 +35,14 @@
     "config": {
         "sort-packages": true
     },
+    "scripts": {
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkPublicFilesDirectory"
+        ]
+    },
     "extra": {
         "drupal-paranoia": {
             "app-dir": "app",
