@@ -35,12 +35,17 @@
     "config": {
         "sort-packages": true
     },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ]
+    },
     "scripts": {
         "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "AminoProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkPublicFilesDirectory"
+            "AminoProject\\composer\\ScriptHandler::checkPublicFilesDirectory"
         ]
     },
     "extra": {
