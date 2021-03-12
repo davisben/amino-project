@@ -23,7 +23,8 @@
         "drupal/core-composer-scaffold": "^9.0",
         "drupal/core-recommended": "^9.0",
         "drush/drush": "^10.3",
-        "webflo/drupal-finder": "^1.2"
+        "webflo/drupal-finder": "^1.2",
+        "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.0"
@@ -68,6 +69,12 @@
             "app/profiles/contrib/{$name}": ["type:drupal-profile"],
             "app/themes/contrib/{$name}": ["type:drupal-theme"],
             "app/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "merge-plugin": {
+            "include": [
+                "app/profiles/contrib/amino/composer.json",
+                "app/profiles/contrib/amino/modules/*/composer.json"
+            ]
         },
         "composer-exit-on-patch-failure": true,
         "patchLevel": {
