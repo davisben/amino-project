@@ -73,7 +73,7 @@ class ScriptHandler {
    * @param \Composer\Script\Event $event
    *   The composer event object.
    */
-  public function checkPublicFilesDirectory(Event $event) {
+  public static function checkPublicFilesDirectory(Event $event) {
     $fs = new Filesystem();
     $drupalFinder = new DrupalFinder();
     $drupalFinder->locateRoot(getcwd());
